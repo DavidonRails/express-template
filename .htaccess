@@ -1,0 +1,12 @@
+#AuthType Basic
+#AuthName "Password Protected Area"
+#AuthUserFile /path/to/.htpasswd
+#Require valid-user
+
+xRewriteEngine On
+#RewriteCond %{REQUEST_URI} !^/press/.*
+#RewriteRule ^.*$ https://www.google.com/
+
+RewriteCond %{HTTP_HOST} ^exqsd.com [NC]
+RewriteRule ^(.*)$ https://www.exqsd.com.com/$1 [L,R=301,NC]
+

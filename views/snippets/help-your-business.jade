@@ -1,0 +1,109 @@
+section.bg-gray-office
+  .gray-cover
+  .container
+    a(id='lets-get-started')
+    .row.gutter-xs-narrow.justify-content-center
+      .col-12.col-md-12.col-lg-12.vhq-mb-15
+        h2.text-center Let's Get Started
+        p.large.text-center.vhq-mb-md-60
+          | Contact us today to start building an application for your bussiness.
+        .row
+          .col-md-12
+            form#request-for-quote.rfq.form(method='POST', action='/contact/', _lpchecked='1')
+              .row
+                .form-group.col-xs-12.col-sm-6
+                  h6 Full Name
+                  input#full_name.form-control(type='text', name='full_name', placeholder='Full Name', data-validation='required', required='required', style='background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg=="); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;')
+                .form-group.col-xs-12.col-sm-6
+                  h6 Email Address
+                  input#email_address.form-control(type='email', name='email', data-validation='email', placeholder='Email Address', required='required')
+                .form-group.col-xs-12.col-sm-6
+                  h6 Phone Number
+                  input#phone_number.form-control(type='text', name='phone_number', placeholder='Phone Number', required='required', maxlength='14')
+                .form-group.col-xs-12.col-sm-6
+                  h6 What best describes the reason you're contact us?
+                  select.form-control(id='contact_reason','name'="reason")
+                    option(value='General') General
+                    option(value='Support') Support
+                    option(value='Request For Quote') Request a Quote
+                    option(value='Partnbership Request') Partnership Request
+                .form-group.col-xs-12.col-sm-12.project-details(id='timeframe', style='display: none')
+                  h6 What is your timeframe for starting this application?
+                  select#budget.form-control(name='timeframe', required=true)
+                    option(disabled selected) -- select a timeframe --
+                    option(value='Within the next month.') Within the next month.
+                    option(value='Within the next 3 months.') Within the next 3 months
+                    option(value='Within the next 6 months.') Within the next 6 months
+                    option(value='Within the next 12 months.') Within the next 12 months.
+                    option(value='No planned date') No planned date.
+
+                .form-group.col-xs-12.col-sm-12.project-details(id='budget', style='display: none')
+                  h6 What is your budget for this project?
+                  select#budget.form-control(name='budget', required=true)
+                    option(disabled selected) -- select a budget --
+                    option(value='Under $10,000') Under $10,000
+                    option(value='$10,000 to $25,000') $10,000 - $25,000
+                    option(value='$25,000 - $50,000') $25,000 - $50,000
+                    option(value='$50,000 - $100,000') $50,000 - $100,000
+                    option(value='$100,000 - $250,000') $100,000 - $250,000
+                    option(value='$250,000 - $500,000') $250,000 - $500,000
+                    option(value='$500,000+') $500,000+
+                    option(value='Budget Not Yet Determined') Budget Not Yet Determined
+
+                .form-group.col-xs-12.col-sm-12.project-details(id='budget', style='display: none')
+                  h6 What type of project are you wanting to build?
+                  ul.list-unstyled.ul-mc.h100p
+                    li 
+                      input(id="web" name="services[]" type='checkbox' value='Web Application' style="margin: 5px 5px 0px 0px;") 
+                      label(for="web")  Web Application
+                    li 
+                      input(id="mobile" name="services[]"  type='checkbox' value='Mobile Application' style="margin: 5px 5px 0px 0px;") 
+                      label(for="mobile")  Mobile Application
+                    li 
+                      input(id="enterprise" name="services[]"  type='checkbox' value='Enterprise Application' style="margin: 5px 5px 0px 0px;") 
+                      label(for="enterprise")  Enterprise Application
+                    li 
+                      input(id="ux" name="services[]"  type='checkbox' value='UI Design and/or UI Optimization' style="margin: 5px 5px 0px 0px;") 
+                      label(for="ux")  UI/UX Design and Optimization
+                    li 
+                      input(id="consulting" name="services[]"  type='checkbox' value='Development Consultation' style="margin: 5px 5px 0px 0px;") 
+                      label(for="consulting")  Development Consulting
+                    li 
+                      input(id="qa" name="services[]"  type='checkbox' value='Quality Assurance & Software Testing' style="margin: 5px 5px 0px 0px;", required=true) 
+                      label(for="qa")  Quality Assurance and Software Testing 
+
+                .form-group.col-xs-12.col-sm-12
+                  h6 Please provide a short message along with your inquery.
+                  textarea(name="message").form-control(rows=14)
+                .form-group.col-xs-12.col-sm-12
+                  button.btn.btn-outline-success.contact-submit.btn-block.text-center(type='button', style='padding: 15px 15px; margin-bottom: 10px;', data-badge="inline" ) Send Message
+                  p.small.center.vhq-p-0.vhq-mb-20.js-form-footer
+                    | You agree to be contacted by Exquisite Software and it's associates for sales, marketing and advertising reasons, by providing your information you agree to our 
+                    a.p-0(href='/terms-of-service', target='_blank', rel='noopener') Terms of Service 
+                    | and our 
+                    a.p-0(href='/privacy-policy', target='_blank', rel='noopener') Privacy Policy. 
+                  p.small.center.vhq-p-0.vhq-mb-20.js-form-footer
+                    | This site is protected by reCAPTCHA and the Google 
+                    a(href="https://policies.google.com/privacy") Privacy Policy 
+                    | and 
+                    a(href="https://policies.google.com/terms") Terms of Service 
+                    |&nbsp;apply
+                    | .
+      //- .row.gutter-xs-narrow.justify-content-center
+      //-   .col-12.col-md-6.col-lg-6.vhq-mb-15
+      //-     a.card.vhq-card--hover.vhq-mb-0(href='/instant-calculator')
+      //-       img.card-img-top(src='https://exquisitesoftware.sfo2.digitaloceanspaces.com/images/AdobeStock_72858347.jpeg', alt='')
+      //-       .card-body
+      //-         h4 Price Calculator
+      //-         p
+      //-           | Use our pricing calculator to receive an instant price estimate to develop your project.
+      //-         button.btn.btn-outline-success(type='button') Instant Pricing Calculator
+      //-   .col-12.col-md-6.col-lg-6.vhq-mb-15
+      //-     a.card.vhq-card--hover.vhq-mb-0(href='/contact')
+      //-       img.card-img-top(src='https://exquisitesoftware.sfo2.digitaloceanspaces.com/images/support-male.jpg', alt='')
+      //-       .card-body
+      //-         h4 Talk to us
+      //-         p
+      //-           | Talk live to a team member 24/7. Estimates, New Projects, Feature Requests, Bug Repots, we are available to help.
+      //-         button.btn.btn-outline-primary.vhq-ml-md-10 Contact Us
+

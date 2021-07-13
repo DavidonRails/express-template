@@ -1,0 +1,84 @@
+section
+
+    script var allJobs = !{JSON.stringify(jobs)}
+    script {console.log("==== All Jobs ==== : ", allJobs)};
+
+    #formJobList(class='p-3')
+        form#search-job
+            .row
+                .form-group.col-lg-4.col-md-4.col-xs-12.col-sm-12
+                    h6 Search Key
+                    input#search_key.form-control(type='text' name='search_key' placeholder='Search' onchange="searchJobs()" style='border-radius: 0px; ')
+
+                .form-group.col-lg-4.col-md-4.col-xs-12.col-sm-12
+                    h6 Location
+                    select.form-control(id='job_location','name'="job_location" onchange="searchJobs()" style='border-radius: 0px; ')
+                        each loc in locations
+                            option(value='#{loc}') #{loc}
+
+                .form-group.col-lg-4.col-md-4.col-xs-12.col-sm-12
+                    h6 Department
+                    select.form-control(id='job_department','name'="job_department" onchange="searchJobs()" style='border-radius: 0px; ')
+                        each dep in departments
+                            option(value='#{dep.id}') #{dep.name}
+
+            //- .row.jobBoxList
+            //-     each job, index in jobs
+            //-         .jobBox.col-md-4
+            //-             .card.border.px-3(style='background-color:#eceff8;')
+            //-                 .card-header.px-0(style='background-color:#eceff8; border-bottom: 1px solid #579dec;') 
+            //-                     .row.px-3
+            //-                         .col-md-8.px-0.text-nowrap(style='font-weight:bold;  overflow: hidden;') #{job.organization_name} 
+            //-                         .col-md-4.px-0(style='text-align: right;') 
+            //-                             span #{job.contract_details}
+                                
+            //-                     .row.px-3.mt-2
+            //-                         .col-md-8.px-0.text-nowrap(style='font-size:12px; overflow: hidden;') #{job.position_name}
+            //-                         .col-md-4.px-0(style='font-size:12px; text-align: right;') $63000 - $85000
+            //-                 .card-body.px-0(style='height:230px; overflow: hidden; margin-bottom: 15px;')
+            //-                     - if (job.description != "") 
+            //-                         div !{job.description}
+            //-                     - else
+            //-                         p There is no job description                                
+            //-                 .card-footer.px-0(style='background-color:#eceff8; border-top: 1px solid #579dec;')
+            //-                     button.btn.pull-right(type="button" style='background-color:#579dec; font-size:smaller; color:white;' onclick='showJobApplicationForm(#{index}, #{job.id})') APPLY
+            //-                     button.btn.pull-right.mr-3(type="button" style='background-color:#eb8457; font-size:smaller; color:white;') LEARN MORE
+                                
+
+        #accordion.jobBoxList
+            each job, index in jobs
+                .card.border
+                    .card-header(id="heading_"+index data-toggle="collapse" data-target="#collapse_"+index aria-expanded="true" aria-controls="collapse_"+index)
+                        .row.px-3
+                            .col-md-8.px-0.text-nowrap
+                                div(style='font-weight:bold;  overflow: hidden; color:#007bff;') #{job.position_name} 
+                                    - if (job.is_remote) 
+                                        span(style='background-color:#006400; color:white; padding:3px 8px; font-size:10px; margin-left:10px;') REMOTE
+                                div(style='font-size:12px; font-weight:bold; overflow: hidden;') #{job.organization_name}
+
+                            .col-md-3.px-0(style='text-align: right;') 
+                                - if (job.city) 
+                                    div(style='font-size:12px; font-weight:bold; overflow: hidden; height:20px;') #{job.city}, #{job.state} 
+                                - else
+                                    div(style='font-size:12px;  overflow: hidden; height:20px;') 
+                                    
+                                div(style='font-size:12px;  overflow: hidden;')
+                                    - if (job.is_salary_visible)
+                                        div(style='font-size:12px; text-align: right;') $#{job.salary_min} - $#{job.salary_max}
+                            .col-md-1.px-0(style='text-align: right;') 
+                                button.btn.btn-primary(onclick='showJobApplicationForm(#{index}, #{job.id})' style='float:right; border-radius:0px;') APPLY
+
+                    div.collapse(id="collapse_"+index aria-labelledby="heading_"+index data-parent="#accordion")
+                        .card-body.px-5 
+                            - if (job.description != "") 
+                                div !{job.description}
+                            - else
+                                p There is no job description
+                        hr.solid
+                        .row-fluid 
+                            button.btn.btn-primary.mr-3(onclick='showJobApplicationForm(#{index}, #{job.id})' style='float:right; margin-bottom: 15px; border-radius:0px;') APPLY
+
+include ./job-application-form.jade    
+
+
+

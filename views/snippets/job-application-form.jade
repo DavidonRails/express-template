@@ -1,0 +1,71 @@
+
+.modal.fade(id="job_application_dlg" tabindex="-1" role="dialog" aria-hidden="true")
+    .modal-dialog.modal-lg
+        .modal-content
+            .modal-header(style="background-color: #007bff; color:white;")
+                h6.modal-title#jobTitle Welcome! Please submit your application for
+                button.close(type="button" data-dismiss="modal" aria-label="Close" style="color:white;")
+                    span(aria-hidden="true") &times;
+
+            .modal-body
+                form.container-fluid.form.job_application_form#312345
+                    input.jobId#jobId(type="hidden")
+                    
+                    .row-fluid
+                        .form-group
+                            label.col-form-label(for="fullname" style="font-weight:bold;") 
+                                |Full Name 
+                                span.asterisk * 
+                                |:
+                            input.form-control.fullname#30010(type="text" name="fullname")
+                            div.error_label
+                    .row-fluid
+                        .form-group
+                            label.col-form-label(for="email" style="font-weight:bold;") 
+                                |Email 
+                                span.asterisk * 
+                                |:
+                            input.form-control.email#30013(type="email" name="email" )
+                            div.error_label
+                    .row-fluid
+                        .form-group
+                            label.col-form-label(for="phone-number" style="font-weight:bold;") 
+                                |Phone Number 
+                                span.asterisk * 
+                                |:
+                            input.form-control.phone-number#30012(type="text"  name="phone_number")
+                            div.error_label
+                    .row-fluid
+                        .form-group
+                            label.col-form-label(for="resume" style="font-weight:bold;") 
+                                |Resume 
+                                span.asterisk * 
+                                |:
+                            input.form-control-file.mt-3.resume#30019(type="file" name="resume")
+                            div.error_label
+
+                    //- .row
+                    //-     .col-md-12
+                    //-         .form-group
+                    //-             label.col-form-label(for="linkedin") Linkedin:
+
+                    //-             .input-group
+                    //-                 .input-group-prepend
+                    //-                     span.input-group-text#linkedin-addon https://www.linkedin.com/in/
+                    //-                 input.form-control.linkedin(type="text" aria-describedby="linkedin-addon" name="linkedin")
+
+                    //- .row
+                    //-     .col-md-12
+                    //-         .form-group
+                    //-             label.col-form-label(for="message") Message:
+                    //-             textarea.form-control.message
+
+            .modal-footer(style="background-color: #ddd;")
+                style .IN-widget
+                script(src="https://www.linkedin.com/autofill/js/autofill.js" type="text/javascript" async)
+                script(type="IN/Form2" data-form="312345" data-field-firstname="30010" data-field-lastname="30011" data-field-phone="30012" 
+                    data-field-email="30013" data-field-company="30014" data-field-title="30015" data-field-city="30016" data-field-state="30017" 
+                    data-field-country="30018" data-field-zip="30019")
+                    
+                button.btn.btn-secondary(type="button" data-dismiss="modal" style='border-radius:0px;') Close
+                button.btn.btn-primary#sendApplication(onclick="sendApplication()"  style='border-radius:0px;') Apply

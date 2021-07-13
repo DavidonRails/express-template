@@ -1,0 +1,98 @@
+include ../includes/heading.jade
+body
+  main
+    style.
+        .bg-blue {
+          background-image: url(https://exquisitesoftware.sfo2.cdn.digitaloceanspaces.com/images/shape.png), linear-gradient(180deg, rgba(25, 67, 136, .8), rgba(25, 67, 136, 1)), url(https://www.exqsd.com/img/clyn/clyn.png);
+          background-size: cover;
+          background-position: 50% 100%, 0px 0px, 50% 50%;
+          background-size: contain, auto, cover;
+          background-repeat: no-repeat, repeat, no-repeat;
+          background-attachment: scroll, scroll, fixed;
+          padding-bottom: 100px;}
+      
+    header.bg-blue
+      include ../includes/header.jade
+      .container
+        .row.align-items-center.gutter-md-wide.flex-md-row-reverse.justify-content-center.heading
+          .col-xs-12.col-md-12.text-center
+            h1 Clyn
+            p.large.white.vhq-mb-40
+              | Consumers can now find and schedule their home to be cleaned on a regular basis conveniently from their phone.
+              ul.list-unstyled.text-center.white-text(style='color: white')
+                li.badge.badge-tag.badge-white Microsoft .NET
+                li.badge.badge-tag.badge-white Microsoft SQL Server
+                li.badge.badge-tag.badge-white Azure Auto Scaling
+                li.badge.badge-tag.badge-white Redis Caching Server
+                li.badge.badge-tag.badge-white Google API Integration
+                li.badge.badge-tag.badge-white Adobe XD
+                li.badge.badge-tag.badge-white Protopie
+                li.badge.badge-tag.badge-white Xamarin
+    
+    section
+      .container
+        .row
+          .col-md-8.col-sm-12
+            h6 A home-cleaning platform for cleaners and consumers alike.
+            p Clyn began its journey in Dec 2015, and was looking to disrupt the cleaning industry. After a few years Clyn was able to find a reliable team to build Clyn 2.0. As a person to person based application, consumers can connect with Clyners to have their homes cleaned on demand or on a subscription basis. There are many factors that make Clyn unique, including the ability for households to split payments between all members.
+            p Clyn is keeping consumers safe by utilizing background checks and validation of licenses to ensure that the platform stays trustworthy and has only vetted companies and cleaners on the platform. Clyn incorporates an internal ranking and review system, allowing for real-world feedback, that only previous paid customers can utilize to ensure that all reviews are real, and provides new users the ability to learn about their cleaner before they make their choice.
+            p By integrating with Stripe Connect, cleaners are able to get paid instantly, this ability has set Clyn apart from the competitors, and adds great value and incentive to all cleaners on the platform.
+
+          .col-md-4.col-sm-12
+            h6 Services Completed
+            ul.list-unstyled
+              li.checkmark Project Management
+              li.checkmark Development Consultation
+              li.checkmark User Experience Design & Optimization
+              li.checkmark Mobile Application Development
+
+    section.bg-white
+      .container
+        .row.gutter-xs-none.gutter-md-wide.vhq-info-row
+          .col-md-4.col-sm-12
+            h5 Objectives
+            p Clyn as a business takes the stress out of finding reliable home-cleaners.
+            p Clyn came to Exquisite Software with the idea of creating a crowd sourced application that targets businesses and consumers, and enables businesses to grow their presence throughout the community.
+            p The goal was to make Clyn a house-hold name by creating a platform that allows convenience, reliability, and trust.
+
+          .col-md-7.offset-md-1.col-sm-12
+            img.img-fluid.img-responsive(src="/img/clyn/screens/mockup-background-checks.png")
+
+    section
+      .container
+        .row.gutter-xs-none.gutter-md-wide.vhq-info-row
+          .col-md-4.col-sm-12
+            h5 Solution
+            p Clyn strives to become a reliable application among households to conveniently locate home services to help with their monthly and one-time needs.
+
+            p Exquisite Software created a two-sided mobile application for Clyn, allowing Cleaners to sign up, and give their business mobile presence, earn rewards, and have the ability to receive reviews from their jobs within the platform. Add this paragraph when the application is complete.
+
+            p Consumers have the ability to locate and find Cleaners that have been background checked, easily schedule appointments, and split payments between their households.
+
+            p With Clyn successfully growing their platform in multiple countries throughout the world, it was essential that our implementations help Clyn with the foundation for their business, in return the prototype has received great feedback.
+
+          .col-md-7.offset-md-1.col-sm-12
+            img.img-fluid.img-responsive(src="/img/clyn/screens/mockup-top-picks.png")
+
+    section
+      div(style="background: url('/img/clyn/clyn-banner-1.png'); height: 600px; background-position-y: center; background-size: cover")          
+
+    //- section
+    //-   .container
+    //-     .row.gutter-xs-none.gutter-md-wide.vhq-info-row
+    //-       .col-md-12.col-sm-12.text-center
+    //-         h2 Featured Screen Shots
+    //-         #animated-thumbnails
+    //-           each _,i in Array(58)
+    //-             if i > 0
+    //-               a(href='/img/clyn/screens/' + i + '.png')
+    //-                 img(src='/img/clyn/screens/' + i + '.png', style='height: 160px; margin: 10px')
+                    
+    include ../snippets/other-projects.jade
+    include ../snippets/need-help-contact-us.jade
+    include ../snippets/our-services.jade
+
+  include ../snippets/key-benefits.jade 
+  include ../snippets/help-your-business.jade
+  include ../includes/footer.jade
+ 

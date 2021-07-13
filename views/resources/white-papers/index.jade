@@ -1,0 +1,51 @@
+include ../../includes/heading.jade
+body
+  main
+    header.bg-blue
+      include ../../includes/header.jade
+      .container
+        .row.align-items-center.gutter-md-wide.flex-md-row-reverse.justify-content-center.heading
+          .col-xs-12.col-md-12
+            h1 White Papers
+            p.large.white
+              | -
+    section
+      .container-fluid
+        .row.text-center
+          .col-12
+            h2.text-center Find Out How We Help Companies Succeed
+            p.large.text-center.vhq-mb-md-60 Find Out How We Help Companies Succeed
+        .row.card-deck.justify-content-center
+          a.card(style='display: block; max-width: 300px; flex: none', href='/case-studies/mobile-erp')
+            div.card-image-wrapper
+              img.card-img-top(style="background-image:url('https://exquisitesoftware.sfo2.cdn.digitaloceanspaces.com/images/Western-Mobile-ERP/17.png')")
+            .card-body
+              h6.card-title Mobile ERP
+                br
+                small.card-title(style="text-transform: uppercase") Western Windows Systems
+              .card-text A robust mobile application built for Western Window Systems, a 100+ year old windows manufacture based in Phoenix, Arizona.        
+
+          a.card(style='display: block; max-width: 300px; flex: none', href='/case-studies/parts-badger')
+            div.card-image-wrapper
+              img.card-img-top(style="background-image:url('https://exquisitesoftware.sfo2.cdn.digitaloceanspaces.com/images/Parts-Badger/parts-badger.png')")
+            .card-body
+              h6.card-title Parts Badger - Instant Quote Calculator
+                br
+                small.card-title(style="text-transform: uppercase") PartsBadger
+              .card-text A robust mobile application built for Western Window Systems, a 100+ year old windows manufacture based in Phoenix, Arizona.  
+
+          a.card(style='display: block; max-width: 300px; flex: none', href='/case-studies/rugged-video')
+            div.card-image-wrapper
+              img.card-img-top(style="background-image:url('https://exquisitesoftware.sfo2.cdn.digitaloceanspaces.com/images/Rugged-Video-Kiosk/transfers.png')")
+            .card-body
+              h6.card-title Rugged Video - Video Kiosk
+                br
+                small.card-title(style="text-transform: uppercase") Rugged Video
+              .card-text A robust mobile application built for Western Window Systems, a 100+ year old windows manufacture based in Phoenix, Arizona.        
+
+
+
+
+  include ../../snippets/key-benefits.jade 
+  include ../../snippets/help-your-business.jade
+  include ../../includes/footer.jade

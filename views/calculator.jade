@@ -1,0 +1,298 @@
+include ./includes/heading.jade
+html
+  head
+    title Exquisite Software - Custom Enterprise, Mobile, and Web Application Development
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css', integrity='sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO', crossorigin='anonymous')
+    link(rel='stylesheet', href='/css/style.css')
+    link(rel='stylesheet', href='/node_modules/jquery-attachments/dist/jquery-attachments.min.css')
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+    style.
+ 
+      h1 {
+      margin-bottom: 20px;
+      }
+      .selector { 
+        overflow-wrap: break-word;
+        word-spacing: 0px;
+        align-items: center;
+        justify-content: center;
+        white-space: normal; 
+      }
+      
+      .callout
+      .card-deck {
+        //- align-items: center;
+        //- justify-content: center;
+      }
+
+      
+      .card {
+        width: 100%;
+        margin-bottom: 10px;
+        align-items: start;
+        margin-right: 0px;
+        margin-left: 0px;
+      }
+  
+      .selector:focus,
+      .selector:hover {
+        transition: .3s;
+        position: relative; 
+      }
+      .btn {
+      border-radius: 0;
+      }
+      .list-inline-item:not(:last-child) {
+        margin-right: 0px;
+      }
+
+      .btn:focus,.btn.focus {
+      box-shadow: none;
+      } 
+
+      .v-cloak{
+        display: none; 
+      }
+
+  body
+    main
+      header.bg-blue-3
+        include ./includes/header.jade
+        .container
+          .row.align-items-center.gutter-md-wide.flex-md-row-reverse.justify-content-center.heading
+            .col-xs-12.col-md-12
+              h1 Estimate the price of your next project instantly.
+              p.large.white
+                | Our Pricing Calculator provies an instantly cost and time estimate on your application.
+
+                
+      section
+        .container.text-center
+          .row
+            .col-md-12.justify-content-center.text-center
+              .text-center
+                img.text-center.top-image.img-responsive(src="/img/illustrations/undraw_Calculator_0evy.svg")
+              h2.text-center Calculate The Cost Of Your Next Project
+              p.large.text-center.vhq-mb-md-60
+                | Our instant calculator will give you an idea on the effort and cost of your next project.
+           
+            .col-md-12.justify-content-center.text-center#calculator-loading
+              img(src="https://exquisitesoftware.sfo2.cdn.digitaloceanspaces.com/images/Spinner-1s-200px.svg")
+              p One moment while the pricing calculator loads ....
+        
+      section#app.justify-content-center.v-cloak.bg-light
+        .container
+          .row
+            .col-md-12.justify-content-center.text-center
+              //- .callout
+              //-   h2.text-center Ready? Let's Calculate Your Cost
+              //-   p.large.text-center.vhq-mb-md-60
+              //-   | Choose the best options that suite your needs and find out the cost and timeframe associated with developing your project.
+              div(v-for='(question, index) in quiz.questions', class='text-center')
+                // Hide all questions, show only the one with index === to current question index
+                div(v-if='index == questionIndex')
+                  .progressbar-wrapper
+                    ul.progressbar
+                      li.active Step 1
+                      li(v-bind:class="{ 'active' : index >= 1}") Step 2
+                      li(v-bind:class="{ 'active' : index >= 2}") Step 3
+                      li(v-bind:class="{ 'active' : index >= 3}") Step 4
+                      li(v-bind:class="{ 'active' : index >= 4}") Step 5 
+                      li(v-bind:class="{ 'active' : index >= 5}") Step 6 
+                      li(v-bind:class="{ 'active' : index >= 6}") Step 7 
+                  div(style='display: block')
+                    small.mt-40(style="color: rgb(173, 173, 173);") Question # {{ questionIndex+1 }} of {{ quiz.questions.length }} 
+                      span(v-if="question.type == 'multiple'", style="color: red") You can select more than one option.
+                    h5{{ question.text }}
+                    h6(v-show="question.subtitle !== ''") {{ question. subtitle }}           
+                    .alert.alert-danger.error(style="display: none") You must select at least one option.
+                    .card-deck.mt-40
+                      div(style="display: contents", v-for='(response, rindex) in question.responses')
+                        .card.card-30.vhq-card--hover.selector(onclick='return checkClosestResponse($(this));')
+                          .card-body 
+                            img(v-bind:src='response.icon', height='60px', width='auto', style="margin-bottom: 10px")
+                            br
+                            p.menu-header {{response.text}}
+                            span(v-show='response.value.hours' style='display: block; color: green; font-size: 14px;') {{ (response.value.hours * (response.value.low_spread || quiz.low_spread) ) * quiz.hourly | toCurrency }} - {{ (response.value.hours *  (response.value.high_spread || quiz.high_spread) ) * quiz.hourly | toCurrency  }}
+                            span.mb-20(style='display: block; color: #bababa; font-size: 13px', v-show='response.value.hours > 0') {{ parseInt(response.value.hours * (response.value.low_spread || quiz.low_spread ) ) }} -  {{ response.value.hours *  (response.value.high_spread || quiz.high_spread) }} hours 
+                          
+                            p(v-show='response.description != ""') {{ response.description }}
+                            //- .wrapper.hidden
+                            //-   .selection-footer                
+                            //-     hr(vx-show='response.value.hours > 0')
+                            //-     div(v-show='response.value.hours == 0', style='text-align: left; text-transform: uppercase; font-size: 14px; line-height: 26px')
+                            //-       p.text-center.text-muted.bold.strong(style='font-weight: 500; letter-spacing: .8px') No additional hours or cost.
+                            //-     table(v-show='response.value.hours > 0', style='text-align: left; text-transform: uppercase; font-size: 14px; line-height: 26px')
+                            //-       tr
+                            //-         td(style="width: 170px")
+                            //-           span.text-muted.bold.strong(style='width: 140px; font-weight: 500; letter-spacing: .8px') Estimated Hours
+                            //-         td(style='text-alight: right') {{ parseInt(response.value.hours * .70) }} -  {{ response.value.hours * 2.50 }} hours
+                            //-       tr
+                            //-           td
+                            //-             span.text-muted.bold.strong(style='width: 140px; font-weight: 500; letter-spacing: .8px') Estimated Cost
+                            //-           td(style='text-alight: right;') {{ (response.value.hours * .70) * 150 | toCurrency }} - {{ (response.value.hours * 2.50) * 150 | toCurrency  }}
+                        input.response(v-if="question.type == 'multiple'", type='checkbox', :value='rindex', style='display: none', v-model='question.response', 'checked')
+                        input.response(v-if="question.type == 'single'", type='radio', :value='rindex', style='display: none', v-model='question.response', 'checked')
+          .row(v-show='questionIndex === quiz.questions.length')
+            .col-md-12.justify-content-center
+                h5.text-center Let's send you a copy of your free quote.
+                p.large.text-center Please provide us with your contact information so we can send you the details by email.
+                div.alert.alert-danger(v-if="errors.length")
+                  p(style='font-weight: 600; margin-bottom: 20px') Please correct the following error(s):
+                    ul
+                      li(v-for="error in errors") {{ error }}
+            .col-md-4.col-sm-6.col-xs-12
+              .form-group
+                label Full Name *
+                input.form-control(v-model='quiz.contactInformation.fullname', type="textbox", name="fullname",placeholder="Full Name", required)
+            .col-md-4.col-sm-6.col-xs-12
+              .form-group
+                  label Email Address *
+                  input.form-control(v-model='quiz.contactInformation.email_address', type="textbox", name="email_address",placeholder="user@company.com")
+            .col-md-4.col-sm-6.col-xs-12
+              .form-group
+                  label Phone Number *
+                  input.form-control(v-model='quiz.contactInformation.phone_number', type="textbox", name="phone_number",placeholder="480-555-1234")
+            .col-md-4.col-sm-6.col-xs-12
+              .form-group
+                  label Company *
+                  input.form-control(v-model='quiz.contactInformation.company_name', type="textbox", name="company_name",placeholder="Company Name, Inc.")
+            .col-md-4.col-sm-6.col-xs-12
+              .form-group
+                  label Website *
+                  input.form-control(v-model='quiz.contactInformation.website', type="textbox", name="website",placeholder="http://www.company.com/")
+            .col-md-4.col-sm-6.col-xs-12
+              .form-group
+                label Timeframe for starting? *
+                select#budget.form-control(v-model='quiz.contactInformation.timeframe', name='timeframe')
+                  option(value="", selected="selected", hidden="hidden") -- select a timeframe --
+                  option(value='Within the next month.') Within the next month.
+                  option(value='Within the next 3 months.') Within the next 3 months
+                  option(value='Within the next 6 months.') Within the next 6 months
+                  option(value='Within the next 12 months.') Within the next 12 months.
+                  option(value='No planned date') No planned date.
+            .col-xs-12.col-sm-12
+              .form-group
+                h6 Please provide more information on the project you're wanting developed.
+                textarea(v-model='quiz.contactInformation.message', name="message").form-control(rows=10)
+            .col-md-12
+              .form-check
+                  input.form-check-input(type="checkbox", name="terms-of-service",v-model='quiz.contactInformation.agreement', value="agreed")
+                  p I have read the 
+                    a(href="/terms-of-service") Terms of Service 
+                    | and 
+                    a(href="/privacy-policy") Privacy Policy 
+                    | and agree to allow Exquisite Software and their partners to contact me in regards to the quote and for additional marketing purposes.
+                  
+
+          .row( v-show="quiz.contactInformationSubmitted" )
+            .col-md-12.justify-content-center
+              h5 {{quiz.contactInformation.fullname}}, we have calculated the estimated cost of your application. 
+              table.table.table-striped
+                tr
+                  th Estimated Delivery
+                  th Estimated Cost
+                  th Monthly Maintance Cost
+                tr
+                  td {{ estimatedDate(totalHours()).toString() }}
+                  td {{ (totalCost() * .90)  | toCurrency }} - {{ (totalCost() * 1.25) | toCurrency  }} 
+                  td {{ totalMonthlyCost() | toCurrency }}
+                p.alert.alert-success A copy of this detailed quote has been sent to your email.
+
+
+              .card
+                .card-body(style="width: 100%")
+                  h5 Summary
+                  table.table.table-bordered.table-striped
+                    tr
+                      td Description
+                      td Hours
+                      td Cost
+                    tr
+                      td Setup
+                      td {{ totalSetupHours().toFixed(2) }} Hours
+                      td {{ totalSetupHours() * hourlyPrice() | toCurrency }}
+                    tr
+                      td Development
+                      td {{ totalHours().toFixed(2) }}
+                      td {{ totalCost() | toCurrency }}
+                    tr
+                      td Monthly Hosting
+                      td -
+                      td {{ totalHostingCost() | toCurrency }}
+                    tr
+                      td Monthly Service, Support & Maintenance	
+                      td -
+                      td {{ totalMonthlyCost() | toCurrency }}
+              .card
+                .card-body(style="width: 100%")
+                  h5 Detailed 
+                  .d-md-none.d-sm-block
+                    .card(v-for='(item,id) in quiz.questions' v-show='isVisible(item)')
+                      .card-header(style='width: 100%')
+                        b {{ item.text }}
+                      .card-body(style='width: 100%')
+                        h6 Selections
+                        div(v-if='typeof(item.response) == "number"')
+                          i.fa.fa-check.text-success(style='margin-right: 10px;') 
+                          {{ item.responses[item.response].text }}
+                        div(v-else)
+                          div(v-for='responseIndex in item.response' )
+                            i.fa.fa-check.text-success(style='margin-right: 10px;')
+                            {{ item.responses[responseIndex].text }}
+
+                        table.table.table-bordered.table-striped
+                          tr
+                            td Hours 
+                            td {{ computed(id) }}
+                          tr
+                            td Monthly Cost
+                            td {{ computedMonthly(id)  | toCurrency }} 
+                          tr
+                            td Upfront Cost 
+                            td {{ ( computed(id) * hourlyPrice() * .20) * 100 | toCurrency }} - {{ (computed(id) * hourlyPrice() * 1.25) * 100 | toCurrency  }} 
+                  .d-sm-none.d-md-block
+                    table.table
+                      tbody
+                        tr
+                          th Functionality
+                          th Hours
+                          th Monthly
+                          th Up Front Cost
+                        tr(v-for='(item,id) in quiz.questions' v-show='isVisible(item)')
+                          td
+                            | {{ item.text }}
+                            div(v-if='typeof(item.response) == "number"')
+                              i.fa.fa-check.text-success(style='margin-right: 10px;')
+                              {{ item.responses[item.response].text }}
+                            div(v-else)
+                              div(v-for='responseIndex in item.response' )
+                                i.fa.fa-check.text-success(style='margin-right: 10px;')
+                                {{ item.responses[responseIndex].text }}
+                          td
+                            | {{ computed(id) }}
+                          td
+                            | {{ computedMonthly(id)  | toCurrency }} 
+                          td
+                            | {{ computed(id) * hourlyPrice()  | toCurrency }}
+          .row(v-if='!quiz.contactInformationSubmitted')
+            .col-md-12.mt-40.justify-content-center.text-center
+              // The two navigation buttons
+              // Note: prev is hidden on first question
+              button.secondary.button.btn.btn-outline-primary.btn-big(v-if='questionIndex > 0', v-on:click='prev')
+                i.fa.fa-arrow-left(style='margin-right: 20px')
+                | Previous
+              button.success.button.btn.btn-success.btn-big(v-on:click='next')
+                | Next 
+                i.fa.fa-arrow-right(style='margin-left: 20px')
+
+  img( v-show="quiz.contactInformationSubmitted", height='1', width='1', style='display:none;', alt='', src='https://dc.ads.linkedin.com/collect/?pid=672996&conversionId=1048490&fmt=gif')
+          
+
+      
+  include ./includes/footer.jade
+script(src='/js/instant-calculator.js')
+script(src='https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js')
+script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js', integrity='sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy', crossorigin='anonymous')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+script(src='https://cdn.jsdelivr.net/npm/vue-scrollto')  

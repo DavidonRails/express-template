@@ -1,0 +1,143 @@
+html
+  head
+    title Exquisite Software - Custom Enterprise, Mobile, and Web Application Development
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css', integrity='sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO', crossorigin='anonymous')
+    link(rel='stylesheet', href='/css/style.css')
+    script(src='js/instant-calculator.js')
+    script(src='https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js')
+    script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js', integrity='sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy', crossorigin='anonymous')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+    script(src='https://cdn.jsdelivr.net/npm/vue-scrollto')
+    style.
+ 
+      h1 {
+      margin-bottom: 20px;
+      }
+      .selector { 
+        overflow-wrap: break-word;
+        word-spacing: 0px;
+        align-items: center;
+        justify-content: center;
+        white-space: normal; 
+      }
+      
+      .callout
+      .card-deck {
+        align-items: center;
+        justify-content: center;
+      }
+
+      
+      .card {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+  
+      .selector:focus,.selector:hover {
+                transition: .3s;
+        position: relative; 
+      } 
+      .list-inline-item:not(:last-child) {
+        margin-right: 0px;
+      }
+
+      .btn:focus,.btn.focus {
+      box-shadow: none;
+      } 
+
+      [v-cloak]
+      display: none;
+  body
+    main
+      header.bg-blue
+        include ./includes/header.jade
+        .container
+          .row.align-items-center.gutter-md-wide.flex-md-row-reverse.justify-content-center.heading
+            .col-xs-12.col-md-12
+              h1 Find out how Exquisite saves you money.
+              p.large.white
+                | Our Calculator provides an instant estimated savings cost for your project, so you can determine the ROI.
+
+      section#app.justify-content-center(v-cloak='')
+        .container
+          .row
+            .col-md-12.justify-content-center
+              h3.text-center ROI Calculator
+            .col-md-6.justify-content-center
+              h5 Cost to Outsource
+              ul 
+                li The outsourcing company estimates it will take 1.5 developers 6 months to deliver. This will ensure delivery of the app in time for the start of the flying season.
+                li Developers are charged at $150/hour or $1800/day
+                li Total development cost will be $216,000
+              h5 Cost to Develop In-house
+              ul
+                li With novice developers, who are working together for the first time, development will take up to 4 times longer than with an established team of highly experienced developers. Estimate 3 developers for 12 months.
+                li In-house developers will cost $50/hour or $1200/day
+                li Total development cost will be $288,000.
+                li Hiring mobile developers will cost an estimated $25,000 each.
+                li Training a new mobile developer is likely to cost at least $7,000 for a beginner course plus travel.
+                li Total hiring and training costs $96,000.
+                li We are not including the cost of hardware or software for developers.
+                li Total cost of developing in-house will be $384,000.
+            .col-md-6.justify-content-center
+              h5 Calculating the ROI of Outsourcing
+              ul 
+                li We will calculate the ROI over 4 years.
+                li Productivity gains alone are estimated to be equivalent to $150,000 per year.
+                li Since the outsourced app will be ready for the busy flying season it will reap productivity gains immediately.
+                li ROI is measured as (Savings – Investment) / Investment.
+                li Over 4 years, savings will be $600,000.
+                li Outsourced Development cost is $216,000.
+                li ROI will be (600,000 – 216,000) / 216,000 = 178% over 4 years.
+      section
+        .container
+          .row
+            .col-md-12.justify-content-center
+                h3.text-center Calculate the savings and return on investment for your company.
+                p.large.text-center Please provide us with your contact information so we can send you the details by email.
+            .col-md-6.col-sm-6.col-xs-12
+              .form-group
+                  label Average cost in salary per developer each year?
+                  input.form-control(type="textbox", name="fullname",placeholder="$80,000")
+            .col-md-6.col-sm-6.col-xs-12
+              .form-group
+                label Average cost in benefits per developer each year?
+                input.form-control(type="textbox", name="fullname",placeholder="$9,000")
+            .col-md-6.col-sm-6.col-xs-12
+              .form-group
+                label Average hiring cost per developer?
+                input.form-control(type="textbox", name="fullname",placeholder="$25,000")
+            .col-md-6.col-sm-6.col-xs-12
+              .form-group
+                label Average cost to train each developer?
+                input.form-control(type="textbox", name="fullname",placeholder="$7,000")
+            .col-md-6.col-sm-6.col-xs-12
+              .form-group
+                label Average # of Projects per developer each year?
+                input.form-control(type="textbox", name="fullname",placeholder="2")
+            .col-md-6.col-sm-6.col-xs-12
+              .form-group
+                label Average # of People Per Project
+                input.form-control(type="textbox", name="fullname",placeholder="3")
+          .row
+            .col-md-12.col-sm-12.col-xs-12.text-center
+              h3.text-center Annual Development Costs
+            .col-md-6.col-sm-6.col-xs-12.text-center
+              h5 In-House
+              span $315,300
+            .col-md-6.col-sm-6.col-xs-12.text-center
+              h5.text-center Outsourcing with<br>Exquisite Software
+              span $215,300
+          
+                         
+          .row(v-if='!quiz.contactInformationSubmitted')
+            .col-md-12.justify-content-center.text-center
+              // The two navigation buttons
+              // Note: prev is hidden on first question
+              button.secondary.button.btn.btn-outline-primary(v-if='questionIndex > 0', v-on:click='prev')
+                | Previous
+              button.success.button.btn.btn-success(v-on:click='next')
+                | Next
+
+           
+  include ./includes/footer.jade

@@ -1,0 +1,137 @@
+include ./includes/heading.jade
+body
+  main
+    header.bg-cover
+      include ./includes/header.jade
+      .container
+        .row.heading.align-middle.text-center
+          .col-xs-12.col-md-11.col-lg-12
+            h1(style='margin-bottom: 40px') Build Memorable Web and Mobile Applications
+            p.large.white
+              | Wonderful user-experiences, beautiful interfaces, and custom mobile and web applications in weeks -- not months.
+              | Use our frameworks to accelerate your mobile applications development and launch.
+            a(href='#lets-get-started').btn.btn-action.mb-40 Get Started Now
+            .fancy.mb-40
+              span.mb-40 Or
+              p Talk to a live team member now by calling: 
+              a.large.white(style="font-weight: 400", href="tel:+18883151342") 888 315-1342  
+    section.bg-white
+      .container
+        .row.text-center
+          .col-12
+            .text-center
+              img.text-center.top-image.img-responsive(src="/img/illustrations/undraw_development_ouy3.png")
+            h2.text-center One team with many powerful solutions
+            p.large.text-center.vhq-mb-md-60
+              | Our design and engineering teams provide world-class software,
+              | tailored to your exact business needs to help streamline your operations
+              | and increase reliability, productivity and efficiency company-wide.
+        .row.card-deck
+          a.card(href='/services/software-development').mb-3.sm-noflex.card-30 
+            .card-body.text-center
+              .service-icon.service-icon-1
+              h6.card-title Software Development
+              .card-text Custom Enterprise Software designed to streamline and increase efficiency, productivity, and connectivity within your organizations operations.
+          a.card(href='/services/mobile-development').mb-3.sm-noflex.card-30
+            .card-body.text-center
+              .service-icon.service-icon-2
+              h6.card-title Mobile Development
+              .card-text Develop applications that reach the entire market.
+                | Exquisite Software creates native and cross-platform mobile applications for iOS, Windows Mobile and Android devices. 
+          a.card(href='/services/web-design-and-development').mb-3.sm-noflex.card-30
+            .card-body.text-center
+              .service-icon.service-icon-3
+              h6.card-title Web Development
+              .card-text Tailored Business Dashboards, Web Applications, and Website Development tailored to fit your brand.
+          a.card(href='/services/user-experience').mb-3.sm-noflex.card-30
+            .card-body.text-center
+              .service-icon.service-icon-4
+              h6.card-title UI & UX Design and Optimization
+              .card-text User Experience Optimization and Design intended to increase engagement and productivity.
+          a.card(href='/services/quality-assurance').mb-3.sm-noflex.card-30
+            .card-body.text-center
+              .service-icon.service-icon-5
+              h6.card-title QA & Testing
+              .card-text Your application’s health is critical and any problems with the usability may lead to the loss of end-users. 
+          a.card(href='/services/dev-ops').mb-3.sm-noflex.card-30
+            .card-body.text-center
+              .service-icon.service-icon-7
+              h6.card-title DevOps
+              .card-text A team at your fingertips, ensuring all critical points of your application are monitored and accessable.
+              
+    section.bg-light           
+      include ./snippets/key-benefits.jade
+
+  
+        //- .row.gutter-xs-none.gutter-md-wide.vhq-info-row.align-items-center.justify-content-center
+        //-   .col-12.col-sm-11.col-lg-6.vhq-picture-column.reveal-fade-in(data-sr-id='1', style='; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: -webkit-transform 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: transform 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; ')
+        //-     img.img-fluid(src='https://exquisitesoftware.sfo2.digitaloceanspaces.com/images/return-on-investment.jpeg', alt='')
+        //-   .col-12.col-sm-11.col-lg-6
+        //-     h5 What's your return on investment with Exquisite?
+        //-     p
+        //-       | Our Quality Assurance specialists understand the importance of application stability within an infrastructure and has we have created a process ensuring only well-tested code which has passed rigorous testing is approved for deployment. We work to identify and assurance any problems before they become debilitating. A solid-process allows the ability to identify many design issues and eliminating them before deployment. We understand the health of your application is an aspect that cannot be overlooked and ensure a strict testing process targeting both the User-Interface and your application's core functionality.
+        //-     a(href='/roi-calculator').btn.btn-outline-success ROI Calculator
+        //- .row.gutter-xs-none.gutter-md-wide.vhq-info-row.align-items-center.justify-content-center.flex-row-reverse
+        //-   .col-12.col-sm-11.col-lg-6.reveal-fade-in(data-sr-id='2', style='; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: -webkit-transform 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: transform 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; ')
+        //-     .vhq-picture-column
+        //-       img.img-fluid(src='https://exquisitesoftware.sfo2.digitaloceanspaces.com/images/friendly-support.jpg', alt='')
+        //-   .col-12.col-sm-11.col-lg-6
+        //-     h5 Friendly support from the retail professionals
+        //-     p
+        //-       | Get our expert team working for you. Enjoy award winning 24/7 support from retail professionals. We’re ready to get your business set up just right, and keep you growing from there.
+    //- include ./snippets/why-exquisite.jade
+  
+    section.bg-white
+      .container
+        .row
+          .col-12
+            .text-center
+              img.text-center.top-image.img-responsive(src="/img/illustrations/undraw_work_together_h63l.svg")
+            h2.text-center Our intuitive process was created to ensure you succeed.
+            p.large.text-center.vhq-mb-md-60
+              | Our process is created to ensure your application is continually meeting your needs. Each iteration is designed to allow for complete transparency of the completed product.
+
+
+        .row.gutter-xs-none.gutter-md-wide.vhq-info-row
+            .col-12.col-sm-11.col-lg-12
+                .frame.effect6
+                 div.vhq-block-number 01
+                 h4.mt-2.mb-2 Roadmap
+                 h5.mt-2.mb-3 Project Planning, Mapping and Design
+                 h6.mb-4 Starting at $3,000.
+                 p Our Roadmap will allow us to define your requirements and will paint a clear picture of what we are trying to accomplish. 
+                 p We will provide a comprehensive plan of the project, provide recommendations and create detailed wireframes and high-fidelity prototypes while keeping a primary focus on user-experience.
+                 ul 
+                   li Flowcharts explaining the overall process and how objects are related.
+                   li Wireframes and High Fidelity Prototypes
+                   li Product Requirements
+                   li User Stories and User Research
+
+                 a(href="/process/roadmap") Learn More <i class="fa fa-arrow-right"></i>
+
+            .col-12.col-sm-11.col-lg-12
+                .frame.effect6
+                 div.vhq-block-number 02
+                 h4.mt-2.mb-2 Engage
+                 h5.mt-2.mb-3 Software Development, User Testing, and DevOps
+                 h6.mb-4 Starting at $10,000.
+                 p Our design and development teams will collaboratively work to create a beautiful User-Interface (UI) encompassing your brand aspects, creating user-centric designs and will present them as a collection of visual components, mockups, and wireframes. The transparent communication between inside and outside teams ensures a straightforward process and allows us to make any changes to ensure an optimal User-Experience.
+                 a(href="/process/development") Learn More <i class="fa fa-arrow-right"></i>
+
+            .col-12.col-sm-11.col-lg-12
+                .frame.effect6
+                 div.vhq-block-number 03
+                 h4.mt-2.mb-2 Launch and Continue
+                 h5.mt-2.mb-3 Learn, Support and Maintain
+                 h6.mb-4 Starting at $1,000/month
+                 p Our Quality Assurance specialists understand the importance of application stability within the infrastructure and as we have created a process ensuring only well-tested code which has passed rigorous testing is approved for deployment. We work to identify and assurance any problems before they become debilitating. A solid-process allows the ability to identify many design issues and eliminating them before deployment. We understand the health of your application is an aspect that cannot be overlooked and ensure a strict testing process targeting both the User-Interface and your application's core functionality.
+                 a(href="/process/launch") Learn More <i class="fa fa-arrow-right"></i>
+
+    section.bg-light
+      include ./snippets/testimonials.jade
+    section.bg-white
+      include ./snippets/help-your-business.jade
+    section.bg-white
+      include ./snippets/need-help-contact-us.jade
+
+  include ./includes/footer.jade

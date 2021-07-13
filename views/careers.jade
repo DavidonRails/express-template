@@ -1,0 +1,30 @@
+include ./includes/heading.jade
+body
+  main
+    header.bg-blue
+      include ./includes/header.jade
+      .container
+        .row.align-items-center.gutter-md-wide.flex-md-row-reverse.justify-content-center.heading
+          .col-xs-12.col-md-12
+            h1 Careers
+            p.large.white
+              | Work at Exquisite Software -- Great perks and the brighest individuals in the industry.
+    section.bg-light.vhq-pt-40.vhq-pt-md-80
+      .container
+        h1.vhq-mb-40.vhq-mb-md-60.text-center Our Open Positions
+        p.vhq-mb-40.vhq-mb-md-60.text-center Come find your next career with Exquisite Software.
+
+        //- img.img-fluid(src="https://exquisitesoftware.sfo2.cdn.digitaloceanspaces.com/images/why-exquisite.png",  alt="How can Exquisite help you?")
+        
+        div(id='freshteam-widget')
+         section.bg-white 
+          include ./snippets/job-lists.jade
+          
+section.bg-white
+  include ./snippets/key-benefits.jade 
+section.bg-light
+  include ./snippets/help-your-business.jade
+
+  include ./includes/footer.jade
+
+//- script(src='https://s3.amazonaws.com/files.freshteam.com/production/13696/attachments/1000778253/original/1000006732_widget.js?1571558286')

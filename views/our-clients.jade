@@ -1,0 +1,150 @@
+include ./includes/heading.jade
+body
+  main
+    header.bg-blue
+      include ./includes/header.jade
+      .container
+        .row.align-items-center.gutter-md-wide.flex-md-row-reverse.justify-content-center.heading
+          .col-xs-12.col-md-12
+            h1 Clients
+            p.large.white Innovative companies choose Exquisite Software
+            p Exquisite Software helps startups and established businesses increasing their operational efficiencies, engineering capacity, and capabilities. Our expertise, industry knowledge, and passionate approach helps your business innovate, developing applications that set your business apart from your competition and set new standards.
+            p The relationships with our clients continues for over 5 years on average.
+    section.bg-light
+      .container
+        .row
+          .col-12.col-md-12.col-lg-12.text-center
+            h3.vhq-mb-md-60 We have built applications for the greatest companies.
+            ul.list-unstyled.filter-links
+              li
+                button.btn.btn-outline-primary(href="#", data-filter="") All
+                button.btn.btn-outline-secondary(href="#", data-filter="architecture") Architecture
+                button.btn.btn-outline-secondary(href="#", data-filter="medical") Medical & Health
+                button.btn.btn-outline-secondary(href="#", data-filter="technology") Technology
+                button.btn.btn-outline-secondary(href="#", data-filter="finance") Finance
+                button.btn.btn-outline-secondary(href="#", data-filter="media") Media
+                button.btn.btn-outline-secondary(href="#", data-filter="manufacturing") Manufacturing
+                button.btn.btn-outline-secondary(href="#", data-filter="realestate") Real Estate
+                button.btn.btn-outline-secondary(href="#", data-filter="trucking") Trucking
+                button.btn.btn-outline-secondary(href="#", data-filter="hospitality") Hospitality
+                button.btn.btn-outline-secondary(href="#", data-filter="legal") Legal
+                button.btn.btn-outline-secondary(href="#", data-filter="other") Other
+                
+            .filter-sections
+              div.card-deck
+                
+                .card.client-logo-card(href='/case-studies/mobile-erp', data-category='manufacturing')
+                  .card-body
+                    img(src="https://exquisitesoftware.sfo2.cdn.digitaloceanspaces.com/images/client-logos/western-window-systems-logo.png" class="img-logo")  
+                  .card-body
+                    a.btn.btn-outline-primary View Case Study
+                    
+                .card.client-logo-card(data-category='other')
+                  .card-body
+                    img(src="https://performance3d.files.wordpress.com/2013/01/cropped-performance3dlogo72dpi_4c.jpg" class="img-logo")
+                  .card-body
+                    a.btn.btn-outline-primary View Case Study
+
+                .card.client-logo-card(data-category='finance')
+                  .card-body
+                    img(src="https://scontent.fphx1-1.fna.fbcdn.net/v/t31.0-8/26756438_1986734731548603_7569559415515457488_o.jpg?_nc_cat=109&_nc_ht=scontent.fphx1-1.fna&oh=0b639e8c1b51cefbf3cdad7c95dee2e2&oe=5D1B29D0" class="img-logo")
+                  .card-body
+                    a.btn.btn-outline-primary View Case Study
+
+                .card.client-logo-card(href='/case-studies/coinoptions', data-category='finance')
+                  .card-body
+                    img(src="https://exquisitesoftware.sfo2.cdn.digitaloceanspaces.com/images/client-logos/coinoptions-logo.png" class="img-logo") 
+                  .card-body
+                    a.btn.btn-outline-primary View Case Study
+                    
+                .card.client-logo-card(data-category='trucking')
+                  .card-body
+                    img(src="https://exquisitesoftware.sfo2.cdn.digitaloceanspaces.com/images/client-logos/paul-miller-trucking.png" class="img-logo")
+                  .card-body
+                    a.btn.btn-outline-primary View Case Study
+
+                .card.client-logo-card(href='/case-studies/nitek-medical', data-category='medical')
+                  .card-body
+                    img(src="https://exquisitesoftware.sfo2.cdn.digitaloceanspaces.com/images/client-logos/nitek-logo.png" class="img-logo")
+                  .card-body
+                    a.btn.btn-outline-primary View Case Study
+                
+
+                .card.client-logo-card(href='/case-studies/rugged-video', data-category='other')
+                  .card-body
+                    img(src="https://exquisitesoftware.sfo2.cdn.digitaloceanspaces.com/images/client-logos/rugged-logo.png" class="img-logo")
+                  .card-body
+                    a.btn.btn-outline-primary View Case Study
+
+                .card.client-logo-card(href='/case-studies/parts-badger', data-category='manufacturing')
+                  .card-body
+                    img(src="https://exquisitesoftware.sfo2.cdn.digitaloceanspaces.com/images/client-logos/partsbadger-logo.png" class="img-logo")
+                  .card-body
+                    a.btn.btn-outline-primary View Case Study
+
+                .card.client-logo-card(data-category='realestate')
+                  .card-body
+                    img(src="https://exquisitesoftware.sfo2.cdn.digitaloceanspaces.com/images/client-logos/platinum-remax-living-logo.png" class="img-logo") 
+
+
+                .card.client-logo-card(data-category='other')
+                  .card-body
+                    img(src="https://exquisitesoftware.sfo2.cdn.digitaloceanspaces.com/images/client-logos/pizzahut-logo.png" class="img-logo")
+
+                .card.client-logo-card(data-category='technology')
+                  .card-body
+                    img(src="https://exquisitesoftware.sfo2.cdn.digitaloceanspaces.com/images/client-logos/twilio-logo-red.png" class="img-logo")  
+
+                .card.client-logo-card(data-category='medical')
+                  .card-body
+                    img(src="https://exquisitesoftware.sfo2.cdn.digitaloceanspaces.com/images/client-logos/crbard.png" class="img-logo")  
+
+                .card.client-logo-card(data-category='other')
+                  .card-body
+                    img(src="https://exquisitesoftware.sfo2.cdn.digitaloceanspaces.com/images/client-logos/solar-innovations-logo.png" class="img-logo")
+
+                .card.client-logo-card(data-category='other')
+                  .card-body
+                    img(src="https://exquisitesoftware.sfo2.cdn.digitaloceanspaces.com/images/client-logos/christchurchnashville-logo.png" class="img-logo")
+
+                .card.client-logo-card(data-category='technology')
+                  .card-body
+                    img(src="https://exquisitesoftware.sfo2.cdn.digitaloceanspaces.com/images/client-logos/impekable-logo-new.png" class="img-logo")
+
+                a.card.client-logo-card(href='/case-studies/filegenius', data-category='technology')
+                  .card-body
+                    img(src="https://exquisitesoftware.sfo2.cdn.digitaloceanspaces.com/images/client-logos/filegeniusLogo.gif" class="img-logo")  
+
+                a.card.client-logo-card(data-category='legal')
+                  .card-body
+                    img(src="https://exquisitesoftware.sfo2.cdn.digitaloceanspaces.com/images/client-logos/superior-logo.png" class="img-logo")
+
+                .card.client-logo-card(data-category='medical')
+                  .card-body
+                    img(src="https://exquisitesoftware.sfo2.cdn.digitaloceanspaces.com/images/client-logos/ARTAS-Logo.png" class="img-logo")
+
+                a.card.client-logo-card(data-category='legal')
+                  .card-body
+                    img(src="data:image/png;base64,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" class="img-logo")
+
+                a.card.client-logo-card(data-category='media')
+                  .card-body
+                    img(src="https://exquisitesoftware.sfo2.cdn.digitaloceanspaces.com/images/client-logos/steadfast-media-logo.png" class="img-logo")
+
+                a.card.client-logo-card(href='/case-studies/andrews-design-group', data-category='architecture')
+                  .card-body
+                    img(src="https://exquisitesoftware.sfo2.cdn.digitaloceanspaces.com/images/client-logos/adg.png" class="img-logo")
+
+                a.card.client-logo-card(data-category='other')
+                  .card-body
+                    img(src="https://exquisitesoftware.sfo2.cdn.digitaloceanspaces.com/images/client-logos/npi.png" class="img-logo")
+
+                a.card.client-logo-card(href='/case-studies/tree2tree-adventures', data-category='other')
+                  .card-body
+                    img(src="https://tree2tree.azureedge.net/images/logo.png" class="img-logo")
+    
+    
+    include ./snippets/testimonials.jade      
+  include ./snippets/key-benefits.jade 
+  include ./snippets/help-your-business.jade
+  include ./includes/footer.jade

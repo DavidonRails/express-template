@@ -1,0 +1,67 @@
+include ./includes/heading.jade
+body
+  main
+    header.bg-blue-5
+      include ./includes/header.jade
+      .container
+        .row.align-items-center.gutter-md-wide.flex-md-row-reverse.justify-content-center.heading
+          .col-xs-12.col-md-12
+            h1 Our Process
+            p.large.white
+              | A roadmap for everything you need to successfully launch your application to market, and the necessary guidelines for managing your platform.
+            //- p Exquisite Software creates native and cross-platform mobile applications for iOS, Windows Mobile and Android devices. Mobile applications are an extremely valuable asset to your businesses infrastructure, and allow you to have a greater reach and impact on your potential user market and internal infrastructures.
+            
+    section.bg-white
+      .container.vhq-mb-60
+        .row
+          .col-12
+            .text-center
+              img.text-center.top-image.img-responsive(src="/img/illustrations/undraw_work_together_h63l.svg")
+            h2.text-center Our intuitive process was created to ensure you succeed.
+            p.large.text-center.vhq-mb-md-60
+              | Our process is created to ensure your application is continually meeting your needs. Each iteration is designed to allow for complete transparency of the completed product.
+            
+
+        .row.gutter-xs-none.gutter-md-wide.vhq-info-row
+            .col-12.col-sm-11.col-lg-4.mb-40
+              .card.bg-gray
+                .card-body
+                  div.vhq-block-number 01
+                  h4.mt-2.mb-2 Roadmap
+                  h5.mt-2.mb-3 Project Planning, Mapping and Design
+                  h6.mb-4 Starting at $3,000.
+                  p Our Roadmap will allow us to define your requirements and will paint a clear picture of what we are trying to accomplish. 
+                  p We will provide a comprehensive plan of the project, provide recommendations and create detailed wireframes and high-fidelity prototypes while keeping a primary focus on user-experience.
+                  ul 
+                    li Flowcharts explaining the overall process and how objects are related.
+                    li Wireframes and High Fidelity Prototypes
+                    li Product Requirements
+                    li User Stories and User Research
+
+                  a(href="/process/roadmap") Learn More <i class="fa fa-arrow-right"></i>
+            .col-12.col-sm-11.col-lg-4.mb-40
+                .card.bg-gray
+                  .card-body
+                    div.vhq-block-number 02
+                    h4.mt-2.mb-2 Build
+                    h5.mt-2.mb-3 Software Development, User Testing, and DevOps
+                    h6.mb-4 Starting at $10,000.
+                    p Our design and development teams will collaboratively work to create a beautiful User-Interface (UI) encompassing your brand aspects, creating user-centric designs and will present them as a collection of visual components, mockups, and wireframes. The transparent communication between inside and outside teams ensures a straightforward process and allows us to make any changes to ensure an optimal User-Experience.
+                    a(href="/process/development") Learn More <i class="fa fa-arrow-right"></i>
+            .col-12.col-sm-11.col-lg-4.mb-40
+                .card.bg-gray
+                  .card-body
+                    div.vhq-block-number 03
+                    h4.mt-2.mb-2 Launch
+                    h5.mt-2.mb-3 Learn, Support and Maintain
+                    h6.mb-4 Starting at $1,000/month
+                    p Our Quality Assurance specialists understand the importance of application stability within the infrastructure and as we have created a process ensuring only well-tested code which has passed rigorous testing is approved for deployment. We work to identify and assurance any problems before they become debilitating. A solid-process allows the ability to identify many design issues and eliminating them before deployment. We understand the health of your application is an aspect that cannot be overlooked and ensure a strict testing process targeting both the User-Interface and your application's core functionality.
+                    a(href="/process/launch") Learn More <i class="fa fa-arrow-right"></i>
+ 
+
+    section.bg-light           
+      include ./snippets/key-benefits.jade
+      
+    section.bg-white
+      include ./snippets/help-your-business.jade
+  include ./includes/footer.jade

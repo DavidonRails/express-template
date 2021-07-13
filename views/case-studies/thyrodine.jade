@@ -1,0 +1,62 @@
+include ../includes/heading.jade
+body
+  main
+    style.
+        .bg-blue {
+          background-image: url(https://exquisitesoftware.sfo2.cdn.digitaloceanspaces.com/images/shape.png), linear-gradient(180deg, rgba(25, 67, 136, .8), rgba(25, 67, 136, 1)),
+           url(/img/nitek-medical/Thyroflex-Thyrodine.jpg);
+          background-size: cover;
+          background-position: 50% 100%, 0px 0px, 50% 50%;
+          background-size: contain, auto, cover;
+          background-repeat: no-repeat, repeat, no-repeat;
+          background-attachment: scroll, scroll, fixed;
+          padding-bottom: 100px;}
+      
+    header.bg-blue
+      include ../includes/header.jade
+      .container
+        .row.align-items-center.gutter-md-wide.flex-md-row-reverse.justify-content-center.heading
+          .col-xs-12.col-md-12.text-center
+            h1 Thyrodine and Thyroflex
+            p.large.white.vhq-mb-40
+              | A powerful platform to have a clear view into a patients Thyroid functionality.
+              ul.list-unstyled.text-center.white-text(style='color: white')
+                li.badge.badge-tag.badge-white Java
+                li.badge.badge-tag.badge-white SQLite
+    
+    section
+      .container
+        .row
+          .col-md-8.col-sm-12
+            h6 A patented process to test for Thyroid functionality..
+            p Thyroflex and Thyrodine are part of the Nitek G4 Suite. The G4 Suite allows doctors to have a clear view into a patients thyroid function by utilizing patented hardware. 
+            p The patented Thyroflex is a non-invasive state of the art system to test, diagnose, titrate, and manage thyroid conditions. It uses reflexes, Resting Metabolic Rate, and symptoms to accurately determine Thyroid functionality. 
+            p Thyrodine is able to analyze the patients urine and saliva. Nitek G4 then creates a detailed report of the Thyroids current functionality, but goes a step further by giving a detailed plan of attach to correct the underlaying issues.
+
+          .col-md-4.col-sm-12
+            h6 Services Completed
+            ul.list-unstyled
+              li.checkmark Software Development
+              li.checkmark Development Consultation
+    section
+      div(style="background: url('/img/down-sample/thyrodine_section_bg_3.jpg'); height: 600px; background-position-y: center; background-size: cover")          
+
+    //- section
+    //-   .container
+    //-     .row.gutter-xs-none.gutter-md-wide.vhq-info-row
+    //-       .col-md-12.col-sm-12.text-center
+    //-         h2 Featured Screen Shots
+    //-         #animated-thumbnails
+    //-           each _,i in Array(58)
+    //-             if i > 0
+    //-               a(href='/img/clyn/screens/' + i + '.png')
+    //-                 img(src='/img/clyn/screens/' + i + '.png', style='height: 160px; margin: 10px')
+                    
+    include ../snippets/other-projects.jade
+    include ../snippets/need-help-contact-us.jade
+    include ../snippets/our-services.jade
+
+  include ../snippets/key-benefits.jade 
+  include ../snippets/help-your-business.jade
+  include ../includes/footer.jade
+ 

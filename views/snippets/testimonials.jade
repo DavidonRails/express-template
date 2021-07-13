@@ -1,0 +1,65 @@
+.container
+  .text-center
+    img.text-center.top-image.img-responsive(src="/img/illustrations/undraw_super_thank_you_obwk.png")
+  h2.text-center See why the world's best companies love us.
+  p.large.text-center.vhq-mb-md-60
+    | Hundreds of companies have experienced the benefits of Exquisite and have loved the results. Don't take our word for it, listen to what our past clients have to say. 
+  .row.justify-content-center.mb-20
+    .col-12.col-md-10.col-lg-12
+      // No carousel for mobile
+      #carouselCustomers.carousel.slide.d-none.d-sm-block(data-ride='carousel', data-interval='10000').mb-20
+        .carousel-inner
+          .carousel-item
+            .row.no-gutters.vhq-quote
+              .col-12.col-lg-6.vhq-pr-lg-15
+                .js-video-placeholder.vhq-card.d-flex--hover
+                  a.js-video-placeholder--quote(data-video-id='kYHB2USIYUs', href='javascript:void(0)')
+                    .vhq-placeholder
+                      .vhq-button-play.vhq-button-play--center
+                        span.vhq-arrow-right
+                      .embed-responsive.embed-responsive-16by9
+                        iframe(width="1004", height="753", src="https://www.youtube.com/embed/hUKQThNK0bQ?modestbranding=1&amp;autoplay=0&amp;controls=1&amp;loop=1&amp;playsinline=1&amp;rel=0", frameborder="0", allow="autoplay; encrypted-media", allowfullscreen)
+              .col-12.col-lg-6
+                .vhq-quote__body
+                  img.vhq-quote__logo.lozad(data-src='https://exquisitesoftware.sfo2.cdn.digitaloceanspaces.com/images/client-logos/nitek-logo.png', alt='Nitek Medical')
+                  p.vhq-quote__text
+                    | "They are better than most of the companies we evaluated, and their cost was competitive."
+                  p.vhq-quote__person Jason Ray, Managing Parter of Nitek Medical
+                  p.vhq-quote__store-info Medical Devices ∙ Multinational
+          .carousel-item.active
+            .row.no-gutters.vhq-quote
+              .col-12.col-lg-6.vhq-pr-lg-15
+                .js-video-placeholder.vhq-card.d-flex--hover
+                  a.js-video-placeholder--quote(data-video-id='-jBOrzcVap4', href='javascript:void(0)')
+                    .vhq-placeholder
+                      .vhq-button-play.vhq-button-play--center
+                        span.vhq-arrow-right
+                    img.img-fluid.lozad(data-src='https://exquisitesoftware.sfo2.cdn.digitaloceanspaces.com/images/PartsBadger%20-%20Roy%20Dietsch.png', alt='PartsBadger')
+              .col-12.col-lg-6
+                .vhq-quote__body
+                  img.vhq-quote__logo.img-fluid.lozad(data-src='https://exquisitesoftware.sfo2.cdn.digitaloceanspaces.com/images/client-logos/partsbadger-logo.png', alt='PartsBadger logo')
+                  p.vhq-quote__text
+                    | “Exquisite Software really helped us out of a bind getting a customer project delivered on time after another contracted programmer failed.  They had great communication, and we delivered on time and under budget!  We liked working with them so much that we've selected them for a much larger effort.”
+                  p.vhq-quote__person Roy Dietsch, Owner of PartsBadger
+                  p.vhq-quote__store-info Manufacture ∙ United States
+        // you have to make the href point to this specific carousel
+        a.carousel-control-prev(href='#carouselCustomers', role='button', data-slide='prev')
+          span.carousel-control-prev-icon(aria-hidden='true')
+          span.sr-only Previous
+        a.carousel-control-next(href='#carouselCustomers', role='button', data-slide='next')
+          span.carousel-control-next-icon(aria-hidden='true')
+          span.sr-only Next
+    .row
+      .col-12.col-md-12.middle
+        h6.text-center Awards and Recognition
+      .col-12.col-md-12
+        .row.text-center
+          .col-lg-12.vhq-pb-20.vhq-pb-md-0
+            .inline-container
+              .inline-item
+                img.img-fluid(src='/img/down-sample/top-software-developers.png', style='height: 50px; margin: 20px;')
+              .inline-item
+                img.img-fluid(src='/img/down-sample/Software_Developers_2018.png', style='height: 100px; margin: 20px;')
+              .inline-item
+                img.img-fluid(src='/img/down-sample/Mobile_App_Developers_2018.png', style='height: 100px; margin: 20px;')
+        

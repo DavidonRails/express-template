@@ -1,0 +1,97 @@
+include ../includes/heading.jade
+body
+  main
+    style.
+      .bg-blue {
+        background-image: url(https://exquisitesoftware.sfo2.cdn.digitaloceanspaces.com/images/shape.png), 
+          linear-gradient(180deg, rgba(25, 67, 136, .8), rgba(25, 67, 136, 1)), 
+          url(https://www.exqsd.com/img/Gravy-How-can-we-serve-you.png);
+        background-size: cover;
+        background-position: 50% 100%, 0px 0px, 50% 50%;
+        background-size: contain, auto, cover;
+        background-repeat: no-repeat, repeat, no-repeat;
+        background-attachment: scroll, scroll, fixed;
+        padding-bottom: 100px;}
+    
+    header.bg-blue
+      include ../includes/header.jade
+      .container
+        .row.align-items-center.gutter-md-wide.flex-md-row-reverse.justify-content-center.heading
+          .col-xs-12.col-md-12.text-center
+            h1 Gravy Ordering Platform
+            p.large.white.vhq-mb-40
+              | Providing restaurants with the ability to affordably have online and mobile presence.
+              ul.list-unstyled.text-center.white-text(style='color: white')
+                li.badge.badge-tag.badge-white Firebase
+                li.badge.badge-tag.badge-white Java
+                li.badge.badge-tag.badge-white Swift
+                li.badge.badge-tag.badge-white Redis
+                li.badge.badge-tag.badge-white Laravel
+                li.badge.badge-tag.badge-white PHP
+                li.badge.badge-tag.badge-white MySQL
+    
+    section
+      .container
+        .row.gutter-xs-none.gutter-md-wide.vhq-info-row
+          .col-md-8.col-sm-12
+            h6 Summary
+            p Gravy came to Exquisite Software with a vision of the future. Where Gravy has provided restaurants with the ability to put their menu online. The Gravy Platform enables user to brand a website, ios & android app. System allows for automated ordering, reservations & Cancellations. Once the customer has ordered their meal. They are prompted to pay through the platform.
+          .col-md-4.col-sm-12
+            h6 Services Completed
+            ul.list-unstyled
+              li.checkmark Project Management
+              li.checkmark Development Consultation
+              li.checkmark Software Development
+              li.checkmark Web Development
+              li.checkmark Mobile Application Development
+    section.bg-white
+          .container
+            .row.gutter-xs-none.gutter-md-wide.vhq-info-row
+              .col-md-4.col-sm-12
+                h4 Problems
+                p -
+              .col-md-7.offset-md-1.col-sm-12
+                img.img-fluid(src="/img/gravy/gravy-main.png")
+    section
+      .container
+        .row.gutter-xs-none.gutter-md-wide.vhq-info-row
+          .col-md-7.col-sm-12
+            img.img-fluid(src="/img/gravy/gravy-menu.png")
+          .col-md-4.col-sm-12
+            h4 Objectives
+            p -
+    section.bg-white
+      .container
+        .row.gutter-xs-none.gutter-md-wide.vhq-info-row
+          .col-md-4.col-sm-12
+            h4 Problems
+            p -
+          .col-md-7.offset-md-1.col-sm-12
+            img.img-fluid(src="/img/gravy/gravy-orders.png")    
+            
+    section
+      div(style="background: url('/img/gravy/gravy-banner-tablet.png'); height: 600px; background-size: cover")          
+
+    section
+      .container
+        .row.gutter-xs-none.gutter-md-wide.vhq-info-row
+          .col-md-12.col-sm-12.text-center
+            h2 Featured Screen Shots
+            #animated-thumbnails
+              each _,i in Array(19)
+                if i > 0
+                    a(href='/img/gravy/screens/' + i + '.png')
+                      img(src='/img/gravy/screens/' + i +'.png', style='height: 160px; margin: 10px')
+
+      
+    include ../snippets/other-projects.jade
+    include ../snippets/need-help-contact-us.jade
+    include ../snippets/our-services.jade
+
+
+    
+
+            
+  include ../snippets/key-benefits.jade 
+  include ../snippets/help-your-business.jade
+  include ../includes/footer.jade
